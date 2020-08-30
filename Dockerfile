@@ -32,7 +32,7 @@ RUN mkdir -p /var/www/html/addons/LayoutComponents
 RUN mv /tmp/LayoutComponents-master/* /var/www/html/addons/LayoutComponents/
 RUN rm -R /tmp/LayoutComponents-master/
 
-RUN wget https://github.com/agentejo/Detektivo/archive/master.zip -O /tmp/Detektivo.zip; unzip /tmp/Detektivo.zip -d /tmp/; rm /tmp/Detektivo.zip
+RUN wget https://github.com/fabien/Detektivo/archive/master.zip -O /tmp/Detektivo.zip; unzip /tmp/Detektivo.zip -d /tmp/; rm /tmp/Detektivo.zip
 RUN mkdir -p /var/www/html/addons/Detektivo
 RUN mv /tmp/Detektivo-master/* /var/www/html/addons/Detektivo/
 RUN rm -R /tmp/Detektivo-master/
