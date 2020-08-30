@@ -42,7 +42,7 @@ RUN mkdir -p /var/www/html/addons/Lokalize
 RUN mv /tmp/Lokalize-master/* /var/www/html/addons/Lokalize/
 RUN rm -R /tmp/Lokalize-master/
 
-RUN wget https://github.com/serjoscha87/cockpit_GROUPS/archive/master.zip -O /tmp/cockpit_GROUPS.zip; unzip /tmp/cockpit_GROUPS.zip -d /tmp/; rm /tmp/cockpit_GROUPS.zip
+RUN wget https://github.com/fabien/cockpit_GROUPS/archive/master.zip -O /tmp/cockpit_GROUPS.zip; unzip /tmp/cockpit_GROUPS.zip -d /tmp/; rm /tmp/cockpit_GROUPS.zip
 RUN mkdir -p /var/www/html/addons/Groups
 RUN mv /tmp/cockpit_GROUPS-master/Groups/* /var/www/html/addons/Groups/
 RUN rm -R /tmp/cockpit_GROUPS-master/
