@@ -48,27 +48,27 @@ RUN mv /tmp/cockpit_GROUPS-master/* /var/www/html/addons/Groups/
 RUN rm -R /tmp/cockpit_GROUPS-master/
 
 RUN wget https://github.com/serjoscha87/cockpit_GroupBoundAssets/archive/master.zip -O /tmp/cockpit_GroupBoundAssets.zip; unzip /tmp/cockpit_GroupBoundAssets.zip -d /tmp/; rm /tmp/cockpit_GroupBoundAssets.zip
-RUN mkdir -p /var/www/html/addons/Groups
+RUN mkdir -p /var/www/html/addons/GroupBoundAssets
 RUN mv /tmp/cockpit_GroupBoundAssets-master/* /var/www/html/addons/GroupBoundAssets/
 RUN rm -R /tmp/cockpit_GroupBoundAssets-master/
 
 RUN wget https://github.com/raffaelj/cockpit_WhiteLabel/archive/master.zip -O /tmp/cockpit_WhiteLabel.zip; unzip /tmp/cockpit_WhiteLabel.zip -d /tmp/; rm /tmp/cockpit_WhiteLabel.zip
-RUN mkdir -p /var/www/html/addons/Groups
+RUN mkdir -p /var/www/html/addons/WhiteLabel
 RUN mv /tmp/cockpit_WhiteLabel-master/* /var/www/html/addons/WhiteLabel/
 RUN rm -R /tmp/cockpit_WhiteLabel-master/
 
 RUN wget https://github.com/raffaelj/cockpit_rljUtils/archive/master.zip -O /tmp/cockpit_rljUtils.zip; unzip /tmp/cockpit_rljUtils.zip -d /tmp/; rm /tmp/cockpit_rljUtils.zip
-RUN mkdir -p /var/www/html/addons/Groups
+RUN mkdir -p /var/www/html/addons/rljUtils
 RUN mv /tmp/cockpit_rljUtils-master/* /var/www/html/addons/rljUtils/
 RUN rm -R /tmp/cockpit_rljUtils-master/
 
 RUN wget https://github.com/raffaelj/cockpit_UniqueSlugs/archive/master.zip -O /tmp/cockpit_UniqueSlugs.zip; unzip /tmp/cockpit_UniqueSlugs.zip -d /tmp/; rm /tmp/cockpit_UniqueSlugs.zip
-RUN mkdir -p /var/www/html/addons/Groups
+RUN mkdir -p /var/www/html/addons/UniqueSlugs
 RUN mv /tmp/cockpit_UniqueSlugs-master/* /var/www/html/addons/UniqueSlugs/
 RUN rm -R /tmp/cockpit_UniqueSlugs-master/
 
 RUN wget https://github.com/raffaelj/cockpit_SelectRequestOptions/archive/master.zip -O /tmp/cockpit_SelectRequestOptions.zip; unzip /tmp/cockpit_SelectRequestOptions.zip -d /tmp/; rm /tmp/cockpit_SelectRequestOptions.zip
-RUN mkdir -p /var/www/html/addons/Groups
+RUN mkdir -p /var/www/html/addons/SelectRequestOptions
 RUN mv /tmp/cockpit_SelectRequestOptions-master/* /var/www/html/addons/SelectRequestOptions/
 RUN rm -R /tmp/cockpit_SelectRequestOptions-master/
 
