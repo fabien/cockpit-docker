@@ -44,12 +44,12 @@ RUN rm -R /tmp/Lokalize-${COCKPIT_VERSION}/
 
 RUN wget https://github.com/serjoscha87/cockpit_GROUPS/archive/master.zip -O /tmp/cockpit_GROUPS.zip; unzip /tmp/cockpit_GROUPS.zip -d /tmp/; rm /tmp/cockpit_GROUPS.zip
 RUN mkdir -p /var/www/html/addons/Groups
-RUN mv /tmp/cockpit_GROUPS-master/* /var/www/html/addons/Groups/
+RUN mv /tmp/cockpit_GROUPS-master/Groups/* /var/www/html/addons/Groups/
 RUN rm -R /tmp/cockpit_GROUPS-master/
 
 RUN wget https://github.com/serjoscha87/cockpit_GroupBoundAssets/archive/master.zip -O /tmp/cockpit_GroupBoundAssets.zip; unzip /tmp/cockpit_GroupBoundAssets.zip -d /tmp/; rm /tmp/cockpit_GroupBoundAssets.zip
 RUN mkdir -p /var/www/html/addons/GroupBoundAssets
-RUN mv /tmp/cockpit_GroupBoundAssets-master/* /var/www/html/addons/GroupBoundAssets/
+RUN mv /tmp/cockpit_GroupBoundAssets-master/GroupBoundAssets/* /var/www/html/addons/GroupBoundAssets/
 RUN rm -R /tmp/cockpit_GroupBoundAssets-master/
 
 RUN wget https://github.com/raffaelj/cockpit_WhiteLabel/archive/master.zip -O /tmp/cockpit_WhiteLabel.zip; unzip /tmp/cockpit_WhiteLabel.zip -d /tmp/; rm /tmp/cockpit_WhiteLabel.zip
