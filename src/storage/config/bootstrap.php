@@ -8,7 +8,7 @@ $app->on(['cockpit.assets.find', 'cockpit.assetsfolders.find.before'], function(
   };
 });
 
-$this->on('cockpit.asset.upload', function (&$asset, &$_meta, &$opts, &$file, &$path) use ($app) {
+$app->on('cockpit.asset.upload', function (&$asset, &$_meta, &$opts, &$file, &$path) use ($app) {
   $user = $app->module('cockpit')->getUser();
   if (!$app->helper('fs')->path("assets://users/{$user['_id']}")) {
     $app->helper('fs')->mkdir("assets://users/{$user['_id']}");
