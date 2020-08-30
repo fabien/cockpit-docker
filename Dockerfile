@@ -27,6 +27,51 @@ RUN rm -R /tmp/cockpit-${COCKPIT_VERSION}/
 RUN echo "\n\nphp_value post_max_size 256M" >> /var/www/html/.htaccess
 RUN echo "\nphp_value  upload_max_filesize 256M" >> /var/www/html/.htaccess
 
+RUN wget https://github.com/agentejo/LayoutComponents/archive/${COCKPIT_VERSION}.zip -O /tmp/LayoutComponents.zip; unzip /tmp/LayoutComponents.zip -d /tmp/; rm /tmp/LayoutComponents.zip
+RUN mkdir -p /var/www/html/addons/LayoutComponents
+RUN mv /tmp/LayoutComponents-${COCKPIT_VERSION}/* /var/www/html/addons/LayoutComponents/
+RUN rm -R /tmp/LayoutComponents-${COCKPIT_VERSION}/
+
+RUN wget https://github.com/agentejo/Detektivo/archive/${COCKPIT_VERSION}.zip -O /tmp/Detektivo.zip; unzip /tmp/Detektivo.zip -d /tmp/; rm /tmp/Detektivo.zip
+RUN mkdir -p /var/www/html/addons/Detektivo
+RUN mv /tmp/Detektivo-${COCKPIT_VERSION}/* /var/www/html/addons/Detektivo/
+RUN rm -R /tmp/Detektivo-${COCKPIT_VERSION}/
+
+RUN wget https://github.com/agentejo/Lokalize/archive/${COCKPIT_VERSION}.zip -O /tmp/Lokalize.zip; unzip /tmp/Lokalize.zip -d /tmp/; rm /tmp/Lokalize.zip
+RUN mkdir -p /var/www/html/addons/Lokalize
+RUN mv /tmp/Lokalize-${COCKPIT_VERSION}/* /var/www/html/addons/Lokalize/
+RUN rm -R /tmp/Lokalize-${COCKPIT_VERSION}/
+
+RUN wget https://github.com/serjoscha87/cockpit_GROUPS/archive/master.zip -O /tmp/cockpit_GROUPS.zip; unzip /tmp/cockpit_GROUPS.zip -d /tmp/; rm /tmp/cockpit_GROUPS.zip
+RUN mkdir -p /var/www/html/addons/Groups
+RUN mv /tmp/cockpit_GROUPS-master/* /var/www/html/addons/Groups/
+RUN rm -R /tmp/cockpit_GROUPS-master/
+
+RUN wget https://github.com/serjoscha87/cockpit_GroupBoundAssets/archive/master.zip -O /tmp/cockpit_GroupBoundAssets.zip; unzip /tmp/cockpit_GroupBoundAssets.zip -d /tmp/; rm /tmp/cockpit_GroupBoundAssets.zip
+RUN mkdir -p /var/www/html/addons/Groups
+RUN mv /tmp/cockpit_GroupBoundAssets-master/* /var/www/html/addons/GroupBoundAssets/
+RUN rm -R /tmp/cockpit_GroupBoundAssets-master/
+
+RUN wget https://github.com/raffaelj/cockpit_WhiteLabel/archive/master.zip -O /tmp/cockpit_WhiteLabel.zip; unzip /tmp/cockpit_WhiteLabel.zip -d /tmp/; rm /tmp/cockpit_WhiteLabel.zip
+RUN mkdir -p /var/www/html/addons/Groups
+RUN mv /tmp/cockpit_WhiteLabel-master/* /var/www/html/addons/WhiteLabel/
+RUN rm -R /tmp/cockpit_WhiteLabel-master/
+
+RUN wget https://github.com/raffaelj/cockpit_rljUtils/archive/master.zip -O /tmp/cockpit_rljUtils.zip; unzip /tmp/cockpit_rljUtils.zip -d /tmp/; rm /tmp/cockpit_rljUtils.zip
+RUN mkdir -p /var/www/html/addons/Groups
+RUN mv /tmp/cockpit_rljUtils-master/* /var/www/html/addons/rljUtils/
+RUN rm -R /tmp/cockpit_rljUtils-master/
+
+RUN wget https://github.com/raffaelj/cockpit_UniqueSlugs/archive/master.zip -O /tmp/cockpit_UniqueSlugs.zip; unzip /tmp/cockpit_UniqueSlugs.zip -d /tmp/; rm /tmp/cockpit_UniqueSlugs.zip
+RUN mkdir -p /var/www/html/addons/Groups
+RUN mv /tmp/cockpit_UniqueSlugs-master/* /var/www/html/addons/UniqueSlugs/
+RUN rm -R /tmp/cockpit_UniqueSlugs-master/
+
+RUN wget https://github.com/raffaelj/cockpit_SelectRequestOptions/archive/master.zip -O /tmp/cockpit_SelectRequestOptions.zip; unzip /tmp/cockpit_SelectRequestOptions.zip -d /tmp/; rm /tmp/cockpit_SelectRequestOptions.zip
+RUN mkdir -p /var/www/html/addons/Groups
+RUN mv /tmp/cockpit_SelectRequestOptions-master/* /var/www/html/addons/SelectRequestOptions/
+RUN rm -R /tmp/cockpit_SelectRequestOptions-master/
+
 COPY src /var/www/html/
 
 RUN chown -R www-data:www-data /var/www/html
