@@ -1,6 +1,6 @@
 FROM php:7-apache
 
-ARG COCKPIT_VERSION="master"
+ARG COCKPIT_VERSION="next"
 
 RUN apt-get update \
     && apt-get install -y \
@@ -27,20 +27,20 @@ RUN rm -R /tmp/cockpit-${COCKPIT_VERSION}/
 RUN echo "\n\nphp_value post_max_size 256M" >> /var/www/html/.htaccess
 RUN echo "\nphp_value  upload_max_filesize 256M" >> /var/www/html/.htaccess
 
-RUN wget https://github.com/agentejo/LayoutComponents/archive/${COCKPIT_VERSION}.zip -O /tmp/LayoutComponents.zip; unzip /tmp/LayoutComponents.zip -d /tmp/; rm /tmp/LayoutComponents.zip
+RUN wget https://github.com/agentejo/LayoutComponents/archive/master.zip -O /tmp/LayoutComponents.zip; unzip /tmp/LayoutComponents.zip -d /tmp/; rm /tmp/LayoutComponents.zip
 RUN mkdir -p /var/www/html/addons/LayoutComponents
-RUN mv /tmp/LayoutComponents-${COCKPIT_VERSION}/* /var/www/html/addons/LayoutComponents/
-RUN rm -R /tmp/LayoutComponents-${COCKPIT_VERSION}/
+RUN mv /tmp/LayoutComponents-master/* /var/www/html/addons/LayoutComponents/
+RUN rm -R /tmp/LayoutComponents-master/
 
-RUN wget https://github.com/agentejo/Detektivo/archive/${COCKPIT_VERSION}.zip -O /tmp/Detektivo.zip; unzip /tmp/Detektivo.zip -d /tmp/; rm /tmp/Detektivo.zip
+RUN wget https://github.com/agentejo/Detektivo/archive/master.zip -O /tmp/Detektivo.zip; unzip /tmp/Detektivo.zip -d /tmp/; rm /tmp/Detektivo.zip
 RUN mkdir -p /var/www/html/addons/Detektivo
-RUN mv /tmp/Detektivo-${COCKPIT_VERSION}/* /var/www/html/addons/Detektivo/
-RUN rm -R /tmp/Detektivo-${COCKPIT_VERSION}/
+RUN mv /tmp/Detektivo-master/* /var/www/html/addons/Detektivo/
+RUN rm -R /tmp/Detektivo-master/
 
-RUN wget https://github.com/agentejo/Lokalize/archive/${COCKPIT_VERSION}.zip -O /tmp/Lokalize.zip; unzip /tmp/Lokalize.zip -d /tmp/; rm /tmp/Lokalize.zip
+RUN wget https://github.com/agentejo/Lokalize/archive/master.zip -O /tmp/Lokalize.zip; unzip /tmp/Lokalize.zip -d /tmp/; rm /tmp/Lokalize.zip
 RUN mkdir -p /var/www/html/addons/Lokalize
-RUN mv /tmp/Lokalize-${COCKPIT_VERSION}/* /var/www/html/addons/Lokalize/
-RUN rm -R /tmp/Lokalize-${COCKPIT_VERSION}/
+RUN mv /tmp/Lokalize-master/* /var/www/html/addons/Lokalize/
+RUN rm -R /tmp/Lokalize-master/
 
 RUN wget https://github.com/serjoscha87/cockpit_GROUPS/archive/master.zip -O /tmp/cockpit_GROUPS.zip; unzip /tmp/cockpit_GROUPS.zip -d /tmp/; rm /tmp/cockpit_GROUPS.zip
 RUN mkdir -p /var/www/html/addons/Groups
