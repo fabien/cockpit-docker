@@ -47,11 +47,6 @@ RUN mkdir -p /var/www/html/addons/Groups
 RUN mv /tmp/cockpit_GROUPS-master/Groups/* /var/www/html/addons/Groups/
 RUN rm -R /tmp/cockpit_GROUPS-master/
 
-RUN wget https://github.com/serjoscha87/cockpit_GroupBoundAssets/archive/master.zip -O /tmp/cockpit_GroupBoundAssets.zip; unzip /tmp/cockpit_GroupBoundAssets.zip -d /tmp/; rm /tmp/cockpit_GroupBoundAssets.zip
-RUN mkdir -p /var/www/html/addons/GroupBoundAssets
-RUN mv /tmp/cockpit_GroupBoundAssets-master/GroupBoundAssets/* /var/www/html/addons/GroupBoundAssets/
-RUN rm -R /tmp/cockpit_GroupBoundAssets-master/
-
 RUN wget https://github.com/raffaelj/cockpit_rljUtils/archive/master.zip -O /tmp/cockpit_rljUtils.zip; unzip /tmp/cockpit_rljUtils.zip -d /tmp/; rm /tmp/cockpit_rljUtils.zip
 RUN mkdir -p /var/www/html/addons/rljUtils
 RUN mv /tmp/cockpit_rljUtils-master/* /var/www/html/addons/rljUtils/
