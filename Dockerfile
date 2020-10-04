@@ -72,7 +72,7 @@ RUN mkdir -p /var/www/html/addons/BlockEditor
 RUN mv /tmp/cockpit_BlockEditor-master/* /var/www/html/addons/BlockEditor/
 RUN rm -R /tmp/cockpit_BlockEditor-master/
 
-RUN wget https://github.com/pauloamgomes/ImageStyles/archive/master.zip -O /tmp/ImageStyles.zip; unzip /tmp/ImageStyles.zip -d /tmp/; rm /tmp/ImageStyles.zip
+RUN wget https://github.com/fabien/ImageStyles/archive/master.zip -O /tmp/ImageStyles.zip; unzip /tmp/ImageStyles.zip -d /tmp/; rm /tmp/ImageStyles.zip
 RUN mkdir -p /var/www/html/addons/ImageStyles
 RUN mv /tmp/ImageStyles-master/* /var/www/html/addons/ImageStyles/
 RUN rm -R /tmp/ImageStyles-master/
