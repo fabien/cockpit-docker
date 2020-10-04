@@ -62,6 +62,31 @@ RUN mkdir -p /var/www/html/addons/SelectRequestOptions
 RUN mv /tmp/cockpit_SelectRequestOptions-master/* /var/www/html/addons/SelectRequestOptions/
 RUN rm -R /tmp/cockpit_SelectRequestOptions-master/
 
+RUN wget https://github.com/raffaelj/cockpit_ModuleLink/archive/master.zip -O /tmp/cockpit_ModuleLink.zip; unzip /tmp/cockpit_ModuleLink.zip -d /tmp/; rm /tmp/cockpit_ModuleLink.zip
+RUN mkdir -p /var/www/html/addons/ModuleLink
+RUN mv /tmp/cockpit_ModuleLink-master/* /var/www/html/addons/ModuleLink/
+RUN rm -R /tmp/cockpit_ModuleLink-master/
+
+RUN wget https://github.com/raffaelj/cockpit_BlockEditor/archive/master.zip -O /tmp/cockpit_BlockEditor.zip; unzip /tmp/cockpit_BlockEditor.zip -d /tmp/; rm /tmp/cockpit_BlockEditor.zip
+RUN mkdir -p /var/www/html/addons/BlockEditor
+RUN mv /tmp/cockpit_BlockEditor-master/* /var/www/html/addons/BlockEditor/
+RUN rm -R /tmp/cockpit_BlockEditor-master/
+
+RUN wget https://github.com/pauloamgomes/ImageStyles/archive/master.zip -O /tmp/ImageStyles.zip; unzip /tmp/ImageStyles.zip -d /tmp/; rm /tmp/ImageStyles.zip
+RUN mkdir -p /var/www/html/addons/ImageStyles
+RUN mv /tmp/ImageStyles-master/* /var/www/html/addons/ImageStyles/
+RUN rm -R /tmp/ImageStyles-master/
+
+RUN wget https://github.com/pauloamgomes/CockpitCms-EditorFormats/archive/master.zip -O /tmp/EditorFormats.zip; unzip /tmp/EditorFormats.zip -d /tmp/; rm /tmp/EditorFormats.zip
+RUN mkdir -p /var/www/html/addons/EditorFormats
+RUN mv /tmp/CockpitCms-EditorFormats-master/* /var/www/html/addons/EditorFormats/
+RUN rm -R /tmp/CockpitCms-EditorFormats-master/
+
+RUN wget https://github.com/pauloamgomes/cockpit-cms-googlemapfield/archive/master.zip -O /tmp/GoogleMapsField.zip; unzip /tmp/GoogleMapsField.zip -d /tmp/; rm /tmp/GoogleMapsField.zip
+RUN mkdir -p /var/www/html/addons/GoogleMapsField
+RUN mv /tmp/cockpit-cms-googlemapfield-master/* /var/www/html/addons/GoogleMapsField/
+RUN rm -R /tmp/cockpit-cms-googlemapfield-master/
+
 COPY src /var/www/html/
 
 RUN chown -R www-data:www-data /var/www/html
